@@ -12,22 +12,28 @@ function UseState() {
     className = 'text-black';
   }
 
+  const handlerIncrement = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };
+
+  const handlerDecrement = () => {
+    setCounter((prevCounter) => prevCounter - 1);
+  };
+
+  const handlerReset = () => {
+    setCounter(0);
+  };
+
   return (
     <div className="mb-2">
-      <h1 className={className}>{counter}</h1>
-      <button
-        type="button"
-        onClick={() => setCounter((prevCounter) => prevCounter + 1)}
-      >
+      <h1 className={`${className} mb-3`}>{counter}</h1>
+      <button type="button" onClick={handlerIncrement}>
         Increment
       </button>
-      <button
-        type="button"
-        onClick={() => setCounter((prevCounter) => prevCounter - 1)}
-      >
+      <button type="button" onClick={handlerDecrement}>
         Decrement
       </button>
-      <button type="button" onClick={() => setCounter(0)}>
+      <button type="button" onClick={handlerReset}>
         Reset
       </button>
     </div>
