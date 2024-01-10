@@ -10,6 +10,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
   ],
   overrides: [],
@@ -28,5 +29,14 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        labelComponents: [],
+        labelAttributes: [],
+        controlComponents: [],
+        depth: 25,
+      },
+    ],
   },
 };
