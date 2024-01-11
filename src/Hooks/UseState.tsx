@@ -1,16 +1,10 @@
 import { useState } from 'react';
+import getClassName from '../utils/getClassName';
 
 function UseState() {
   const [counter, setCounter] = useState(0);
 
-  let className;
-  if (counter >= 1) {
-    className = 'text-lime-500';
-  } else if (counter < 0) {
-    className = 'text-red-500';
-  } else {
-    className = 'text-black';
-  }
+  const className = getClassName(counter);
 
   const handlerIncrement = () => {
     setCounter((prevCounter) => prevCounter + 1);
